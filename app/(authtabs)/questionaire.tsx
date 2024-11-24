@@ -47,6 +47,10 @@ export default function Questionaire() {
       setCurrId(new_rid);
    }
    
+   if (algData[currId]['react-native-options'] === 'appointment:medme') {
+      router.replace('/apptPharm');
+   }
+
    if (symptom && algData[currId]['type'] !== 'Map') {
       return (
          
@@ -54,7 +58,7 @@ export default function Questionaire() {
          <SafeAreaProvider>
          <SafeAreaView >
             <View style={styles.titleContainer}>
-           <ThemedText type="title" >Current symptom: {symptom} </ThemedText>
+           <ThemedText type="subtitle" >Current symptom: {symptom} </ThemedText>
           
             <BoxComponent data={(algData[currId] as AlgNode)}
                onClick={moveToNextRid}
@@ -71,7 +75,7 @@ export default function Questionaire() {
          <SafeAreaProvider>
          <SafeAreaView >
             <View style={styles.titleContainer}>
-         <ThemedText type="title" > {algData[currId].q}</ThemedText>
+         <ThemedText type="subtitle" style={{marginTop: 20, textAlign: "center"}} > {algData[currId].q}</ThemedText>
          <ExternalLink  href={algData[currId].map} linkText="Click here to view the emergency departments."></ExternalLink>
          <Button title="Go Back" onPress={prevRid} />
          </View>

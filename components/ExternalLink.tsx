@@ -2,6 +2,7 @@ import { Link } from 'expo-router';
 import { openBrowserAsync } from 'expo-web-browser';
 import { type ComponentProps } from 'react';
 import { Platform, StyleSheet} from 'react-native';
+import { ThemedText } from './ThemedText';
 
 type Props = Omit<ComponentProps<typeof Link>, 'href'> & { href: string, linkText: string };
 
@@ -21,7 +22,7 @@ export function ExternalLink({ href, linkText, ...rest }: Props) {
         }
       }}
     >
-      {linkText}
+      <ThemedText type='subtitle' style={{color:'white'}}>{linkText}</ThemedText>
     </Link>
   );
 }
@@ -29,7 +30,7 @@ export function ExternalLink({ href, linkText, ...rest }: Props) {
 const styles = StyleSheet.create({
   link: {
   padding: "4%",
-  color: 'black',
-  backgroundColor: '#10fffd'
+  color: 'white',
+  backgroundColor: '#00A79D'
 }
 });

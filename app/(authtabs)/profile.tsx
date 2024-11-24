@@ -3,7 +3,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 import { ScreenButton } from '@/components/ScreenButton';
-import { Icon } from '@rneui/themed';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function Profile() {
   return (
@@ -22,31 +22,31 @@ export default function Profile() {
       
       <View style={styles.flexContainer}>
         
-        <ThemedText type="title" >Your Information</ThemedText>
+        <ThemedText type="title" style={styles.subHeading} >Your Information</ThemedText>
         <View style={styles.rowItem}>
-          <Icon name='person'></Icon>
+          <Ionicons name='person'></Ionicons>
           <ThemedText type="subtitle">Basic Information</ThemedText>
         </View>
         <View style={styles.rowItem}>
-          <Icon name='laptop-medical'></Icon>
+          <Ionicons name='medkit'></Ionicons>
           <ThemedText type="subtitle">Health Background</ThemedText>
         </View>
         <View style={styles.rowItem}>
-          <Icon name='medkit'></Icon>
+          <Ionicons name='medkit'></Ionicons>
           <ThemedText type="subtitle">Medications</ThemedText>
         </View>
         <View style={styles.rowItem}>
-          <Icon name='pills'></Icon>
+          <Ionicons name='medkit'></Ionicons>
           <ThemedText type="subtitle">Allergies</ThemedText>
         </View>
-        <ThemedText type="title" >Your Activity</ThemedText>
+        <ThemedText type="title" style={styles.subHeading} >Your Activity</ThemedText>
         <View style={styles.rowItem}>
-          <Icon name='file-medical'></Icon>
+          <Ionicons name='medkit'></Ionicons>
           <ThemedText type="subtitle">Previous Entries</ThemedText>
         </View>
-        <ThemedText type="title" >Help with Medication Management</ThemedText>
+        <ThemedText type="title"  style={styles.subHeading}>Help with Medication Management</ThemedText>
         <View style={styles.rowItem}>
-          <Icon name='comment-medical'></Icon>
+          <Ionicons name='medkit'></Ionicons>
           <ThemedText type="subtitle">Book an appointment with pharmacist</ThemedText>
         </View>
       </View>
@@ -74,8 +74,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
    }, 
+   subHeading : {
+    textAlign:"center",
+    marginBottom: 20,
+   },
    rowItem: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignContent: "center",
+    gap: 20,
    }
 });

@@ -13,14 +13,14 @@ interface BoxComponentProps {
 export default function BoxComponent(props:BoxComponentProps) {
   return (
       <ThemedView style={styles.titleContainer}>
-      <ThemedText type="title" > {props.data.q}</ThemedText>
+      <ThemedText type="title" style={{textAlign: "center"}} > {props.data.q}</ThemedText>
       <AlgButtons data={props.data}
          onClick={props.onClick}
       ></AlgButtons>
       {props.data["react-native-options"] === 'deliver' &&
         (<View>
           <ScreenButton href='/deliver' text="Need this delivered" color='#6BF2E5'></ScreenButton>
-          <ScreenButton href='/apptTelus' text="Not happy with this option?" color='#6BF2E5'></ScreenButton>
+          <ScreenButton href='/apptPharm' text="Not happy with this option?" color='#6BF2E5'></ScreenButton>
         </View>
         )
       }
