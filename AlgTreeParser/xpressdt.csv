@@ -1,0 +1,109 @@
+ID,isLeaf,startingSymptom,rowType,prompt them,yesNoSelections,Answers,Notes,Warnings,RIDs,buttonTypes,redFlagButton?
+1,FALSE,,normalNode,What symptoms are you feeling today? ,,"- Acid Reflux and/or indigestion
+- UTI
+- Seasonal allergies
+- Cold & flu symptoms  
+- Constipation
+- Diarrhea
+- Nausea and vomiting   
+- Pain (for example: menstrual pain, back pain, headache, etc.)",,,"110,200,5,5,5,5,5,5",,
+2,TRUE,,normalNode,"Please speak to the pharmacist.
+• Based on your symptoms, it’s a good idea to check-in with the pharmacist ",,,,,,,
+3,TRUE,,Map,Please refer to a physician,,- Click to see nearby walk-in clinics ,,,/walk-in-clinics,pageLink,
+4,TRUE,,Map,Please refer to the nearest emergency department. ,,- Click to see nearby locations.,,,/emergencies,pageLink,
+5,TRUE,,normalNode,Thank you using XpressSelect!,,,,,,,
+6,TRUE,,MACSReferralNode,Please talk to the pharmacist if you'd like to check if they can prescribe something for you.,,,,,,,
+7,TRUE,,Map,Stay hydrated and please refer to a physician.  ,,- Click to see nearby locations.,,,/walk-in-clinics,pageLink,
+8,TRUE,,Map,"Please book an appointment with a physician, the pharmacist is unable to provide you with a medication given your symptoms",,,,,https://www.telus.com/en/health/my-care/doctors,,
+9,TRUE,,Map,Please book an appointment with medme,,,,,https://www.medmehealth.com/ca,,
+110,FALSE,Acid Reflux and/or indigestion,yesNoNode,Are you having any of these symptoms?,"- Pain in your chest that spreads to your shoulder, neck, or arm, and might make you sweat 
+- Trouble breathing","- Yes
+- No",,,"4,111",,
+111,FALSE,,yesNoNode,Do any of the following apply to you?,"- Are you younger than 18 years old? 
+- Are you over 50 and getting heartburn for the first time or having worse or more frequent heartburn? 
+- Did your heartburn come back less than 3 months after stopping acid reflux medicine? 
+- Do you or a close family member (like your mom, dad, brother, or sister) have or had stomach cancer? 
+- Are you currently pregnant?","- Yes
+- No",,,"2,112",,
+112,FALSE,,yesNoNode,Are you having any of these symptoms?,"- Stomach pain or feeling really full 
+- Throwing up again and again 
+- Losing weight without trying (more than 5% of your weight) 
+- Black, sticky poop or throwing up blood 
+- Trouble or pain when swallowing, especially solid foods 
+- Constant coughing, clearing your throat, choking, wheezing, trouble breathing, a raspy voice, or a sore throat 
+- Really bad symptoms that make it hard to do normal daily things 
+- Heartburn or acid coming back up into mouth happening only at night","- Yes
+- No  ",,,"2,113",,
+113,FALSE,,yesNoNode,Are you having any of these symptoms?,"- Heartburn, especially after eating, lying down, or bending over 
+- Acid coming back up into your mouth after eating","- Yes
+- No  ",,,"114,2",,
+114,FALSE,,normalNode,How bad are your symptoms? ,,"- Mild and happen less than 2 times a week (don’t affect your daily activities) 
+- Mild and happen 2 or more times a week (still don’t affect your daily activities) 
+- Moderate (might make daily activities harder)",,,"115,118,6",,
+115,FALSE,,normalNode,Do you have kidney disease?,,"- Yes
+- No  ",,,"116,117",,
+116,TRUE,,normalNode,Tap option for additional details  ,,- Pepcid AC,"- • For adults and children 12 years of age or older
+Note: this medication provides relief within 1 hour and can be used to prevent acid reflux.  ","- WARNING:  
+• Do NOT take more than 1 tablet per day  
+• Stop medication and see a doctor if your heartburn continues or worsens ",pepcid.jpg,popup,
+117,TRUE,,normalNode,"Choose from the below options:  
+
+Tap each option for additional details  ",,"- Pepcid AC  
+- Gaviscon Regular Strength 
+- Gaviscon Extra Strength 
+- Tums Extra Strength ","- • Adults and children 12 years of age or older: 
+Note: this medication provides relief within 1 hour and can be used to prevent acid reflux.  
+- • Adults and children 12 years of age or older: 
+Note: This medication provides quick relief, but its effects are short-lived and it does not prevent acid reflux. 
+- • Adults and children 12 years of age or older: 
+Note: This medication provides quick relief, but its effects are short-lived and it does not prevent acid reflux. 
+- Note: This medication provides quick relief, but its effects are short-lived and it does not prevent acid reflux. ","- WARNING:  
+• Do NOT take more than 1 tablet per day  
+• Stop medication and see a doctor if your heartburn continues or worsens 
+- WARNING:  
+• Do NOT take within 2 hours of taking other medications  
+• Stop medication and see a doctor if your heartburn continues or worsens 
+- WARNING:  
+• Do NOT take within 2 hours of taking other medications  
+• Stop medication and see a doctor if your heartburn continues or worsens 
+- WARNING:  
+• Do NOT take within 2 hours of taking other medications  
+• Speak with your doctor if your symptoms persist and you are taking this medication for more than 2 weeks ","pepcid.jpg,gaviscon_regular_strength.jpg,gaviscon_extra_strength.jpg,tums_extra_strength.jpg","popup,popup,popup,popup",
+118,TRUE,,normalNode,Select the option below ,,"- Nexium
+- I would like to talk to the pharmacist to see if they can prescribe something else.","- Note: this medication does not provide immediate relief  
+- ","- WARNING:  
+• Stop medication and see a doctor if your heartburn continues or worsens 
+• Stop medication if you experience diarrhea
+-   ","nexium.jpg,6","popup,",
+200,FALSE,,yesNoNode,What symptoms are you currently experiencing? ,"- Painful or burning sensation when urinating   
+- Feeling a strong need to urinate right away (Urgency)  
+- Urinating more frequently than usual   
+- No unusual vaginal symptoms  
+- Lower stomach discomfort or pressure  
+- Slight blood in the urine  ","- Yes
+- No  ",,,"201,8",,
+201,FALSE,,yesNoNode,What symptoms are you currently experiencing? ,"- Fever, chills  
+- Nausea, vomiting  
+- Back pain  
+- Feeling very tired or unwell  
+- Unusual vaginal discharge or itching  
+- Pain during sexual intercourse 
+- Significant blood in the urine  
+- Symptoms lasting longer than 2 weeks  ","- Yes
+- No  ",,,"8,202",,
+202,FALSE,,normalNode,Have you had a UTI before? ,,"- Yes, within the past month 
+- Yes, two or more times in the past six months 
+- Yes, three or more times in the past year 
+- Yes, but only once a long time ago (I’m not sure when) 
+- No, I’ve never had one ",,,"8,8,8,203,203",,
+203,FALSE,,yesNoNode,Do any of these apply to you? ,"- Pregnant  
+- Breastfeeding a baby less than 1 month old or have G6PD deficiency (e.g. allergic to fava beans) 
+- Male  
+- Under 16 years old  
+- Urinary tract issues (e.g. catheter, blockage)  
+- Kidney problems  
+- Weakened immune systems  
+- Poorly controlled diabetes  
+- Spinal cord injury  
+- Previously diagnosed with interstitial cystitis (chronic bladder condition) ","- Yes
+- No  ",,,"8,9",,

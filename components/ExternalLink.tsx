@@ -1,13 +1,14 @@
 import { Link } from 'expo-router';
 import { openBrowserAsync } from 'expo-web-browser';
 import { type ComponentProps } from 'react';
-import { Platform } from 'react-native';
+import { Platform, StyleSheet} from 'react-native';
 
-type Props = Omit<ComponentProps<typeof Link>, 'href'> & { href: string };
+type Props = Omit<ComponentProps<typeof Link>, 'href'> & { href: string, linkText: string };
 
-export function ExternalLink({ href, ...rest }: Props) {
+export function ExternalLink({ href, linkText, ...rest }: Props) {
   return (
     <Link
+      style={styles.link}
       target="_blank"
       {...rest}
       href={href}
@@ -19,6 +20,16 @@ export function ExternalLink({ href, ...rest }: Props) {
           await openBrowserAsync(href);
         }
       }}
-    />
+    >
+      {linkText}
+    </Link>
   );
 }
+
+const styles = StyleSheet.create({
+  link: {
+  padding: "4%",
+  color: 'black',
+  backgroundColor: '#10fffd'
+}
+});
