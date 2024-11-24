@@ -3,6 +3,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 import { ScreenButton } from '@/components/ScreenButton';
+import { Icon } from '@rneui/themed';
 
 export default function Profile() {
   return (
@@ -20,15 +21,34 @@ export default function Profile() {
       </View>
       
       <View style={styles.flexContainer}>
+        
         <ThemedText type="title" >Your Information</ThemedText>
-        <ThemedText type="subtitle">Basic Information</ThemedText>
-        <ThemedText type="subtitle">Health Background</ThemedText>
-        <ThemedText type="subtitle">Medications</ThemedText>
-        <ThemedText type="subtitle">Allergies</ThemedText>
+        <View style={styles.rowItem}>
+          <Icon name='person'></Icon>
+          <ThemedText type="subtitle">Basic Information</ThemedText>
+        </View>
+        <View style={styles.rowItem}>
+          <Icon name='laptop-medical'></Icon>
+          <ThemedText type="subtitle">Health Background</ThemedText>
+        </View>
+        <View style={styles.rowItem}>
+          <Icon name='medkit'></Icon>
+          <ThemedText type="subtitle">Medications</ThemedText>
+        </View>
+        <View style={styles.rowItem}>
+          <Icon name='pills'></Icon>
+          <ThemedText type="subtitle">Allergies</ThemedText>
+        </View>
         <ThemedText type="title" >Your Activity</ThemedText>
-        <ThemedText type="subtitle">Previous Entries</ThemedText>
+        <View style={styles.rowItem}>
+          <Icon name='file-medical'></Icon>
+          <ThemedText type="subtitle">Previous Entries</ThemedText>
+        </View>
         <ThemedText type="title" >Help with Medication Management</ThemedText>
-        <ThemedText type="subtitle">Book an appointment with pharmacist</ThemedText>
+        <View style={styles.rowItem}>
+          <Icon name='comment-medical'></Icon>
+          <ThemedText type="subtitle">Book an appointment with pharmacist</ThemedText>
+        </View>
       </View>
 
     </SafeAreaView>
@@ -53,5 +73,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     gap: 8,
+   }, 
+   rowItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
    }
 });
