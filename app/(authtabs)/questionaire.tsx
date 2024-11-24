@@ -61,11 +61,13 @@ export default function Questionaire() {
    
    } else {
       return (
-         <SafeAreaProvider>
-         <SafeAreaView style={{height: 100}}>
-              <QuestionaireSearch setSelectedSymptom={setSelectedSymptom} searchResults={searchResults}></QuestionaireSearch>
-         </SafeAreaView>
-         </SafeAreaProvider>
+         <ThemedView style={{height: "100%"}}>
+            <SafeAreaProvider>
+            <SafeAreaView>
+               <QuestionaireSearch setSelectedSymptom={setSelectedSymptom} searchResults={searchResults}></QuestionaireSearch>
+            </SafeAreaView>
+            </SafeAreaProvider>
+         </ThemedView>
        );
    }
 }

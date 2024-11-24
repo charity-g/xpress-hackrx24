@@ -2,8 +2,6 @@ import { StyleSheet, View} from "react-native";
 import { useState, Dispatch, Fragment, SetStateAction } from "react";
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
-// import SearchableDropdown from 'react-native-searchable-dropdown';
 import { SearchableDropdown } from "@/components/searchableDropdown";
 import { ScreenButton } from "@/components/ScreenButton";
 
@@ -29,7 +27,7 @@ export default function QuestionaireSearch(props : SearchProps) {
             }}
             options={props.searchResults}
         />
-        </Fragment>
+      </Fragment>
         
         <View>
           {selectedItems.map( () =>

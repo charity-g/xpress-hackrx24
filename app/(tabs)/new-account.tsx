@@ -1,4 +1,5 @@
 import { StyleSheet, TextInput, Pressable} from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useState} from 'react';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 import { ThemedView } from '@/components/ThemedView';
@@ -8,6 +9,17 @@ import { ScreenButton } from '@/components/ScreenButton';
 export default function NewAccount() {
   const [text, onChangeText] = useState('');
   const [text2, onChangeText2] = useState('');
+
+  const _storeData = async () => {
+    try {
+      await AsyncStorage.setItem(
+        text,
+        text2,
+      );
+    } catch (error) {
+      console.log("_storeData in screen tabs in tab NewAccount failed: " + error);
+    }
+  };
   
   return (
     <ThemedView style={{height: "100%"}}>
@@ -33,7 +45,7 @@ export default function NewAccount() {
       {
         text.length > 0 && text2.length > 0 &&
           (<ThemedView>
-          <Pressable onPress={()=> {console.log("HELLO")}}>
+          <Pressable onPress={_storeData}>
             <ScreenButton  href="/profile" text="Create Account" color='#6BF2E5'></ScreenButton>
           </Pressable>
           </ThemedView>)

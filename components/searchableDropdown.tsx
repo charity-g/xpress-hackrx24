@@ -6,7 +6,6 @@ import {
   View,
   TouchableOpacity,
   StyleSheet,
-  Keyboard
 } from 'react-native';
 
 
@@ -33,7 +32,7 @@ export function SearchableDropdown({options, onOptionSelected}) {
   };
 
   return (
-    <View>
+    <View style={styles.containerStyle}>
       <TextInput
         style={styles.textInputProps}
         value={searchText}
@@ -62,7 +61,7 @@ export function SearchableDropdown({options, onOptionSelected}) {
 }
 
 const styles = StyleSheet.create({
-  containerStyle: { padding: 5 },
+  containerStyle: { padding: 5, height:"200%"},
   itemStyle:{
               padding: 10,
               marginTop: 2,
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
    itemTextStyle: { color: '#222' },
    itemsContainerStyle: { maxHeight: 140 },
     textInputProps:{
-          color: '#fff',
+          color: '#000',
           padding: 12,
           borderWidth: 1,
           borderColor: '#ccc',
