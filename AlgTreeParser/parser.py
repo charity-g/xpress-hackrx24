@@ -139,7 +139,8 @@ for row_index, row in dt_csv.iterrows():
         if row_type == 'Buffer':
             continue #don't add to data
         elif row_type == 'Map':
-            node['map'] = row['RIDs']
+            if str(row['RIDs']) != 'nan':
+                node['map'] = row['RIDs']
         elif row_type == 'normalNode':
             if str(row['Answers']) == 'nan':
                 node['buttons'] = []

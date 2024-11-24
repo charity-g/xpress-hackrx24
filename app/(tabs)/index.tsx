@@ -21,7 +21,7 @@ export default function HomeScreen() {
 
       <ThemedView style={styles.loginButtons}>
         <ScreenButton href="/new-account" text="Create new account" color='#6BF2E5'/>
-        <ScreenButton href="/login" text="Login" bordercolor='#00A79D'/>
+        <ScreenButton href="/login" text="Login" bordercolor='#00A79D' color='#ffffff'/>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     marginBottom: 80,
   },
   reactLogo: {
-    height: 260,
+    height: 280,
     width: 400,
   }, 
   loginButtons: {

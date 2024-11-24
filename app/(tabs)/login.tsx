@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, Pressable} from "react-native";
+import { StyleSheet, TextInput, Pressable, View, Image} from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useState} from 'react';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
@@ -36,8 +36,15 @@ export default function Login() {
     <ThemedView style={{height: "100%"}}>
     <SafeAreaProvider>
     <SafeAreaView >
-      <ThemedText type="title" style={styles.titleContainer}> Login </ThemedText>
-      
+      <View  style={styles.titleContainer}>
+        <ThemedText type="title"> Login</ThemedText>
+        <Image
+          source={require('@/assets/images/LogoMotto.png')}
+          style={styles.reactLogo}
+        />
+      </View>
+    
+      <View style={{margin: 40, flexDirection: "column", alignContent: "center"}}>
       <TextInput
         style={styles.input}
         onChangeText={onChangeText}
@@ -53,11 +60,12 @@ export default function Login() {
         placeholderTextColor='#444444'
         placeholder="Password"
       />
-      <ThemedView>
-          <Pressable onPress={_getPwdData}>
-            <ScreenButton href={verified} text="Login" color='#6BF2E5'></ScreenButton>
-          </Pressable>
-          </ThemedView>
+      
+      <Pressable onPress={_getPwdData}>
+          <ScreenButton href={verified} text="Login" color='#6BF2E5'></ScreenButton>
+      </Pressable>
+      </View>
+      
     </SafeAreaView>
     </SafeAreaProvider>
     </ThemedView>
@@ -68,8 +76,14 @@ export default function Login() {
 const styles = StyleSheet.create({
    titleContainer: {
      gap: 8,
-     marginTop: 20,
+     marginTop: 40,
+     flexDirection: "row",
+     justifyContent: "space-between",
    },
+   reactLogo: {
+    height: 120,
+    width: 200,
+  }, 
    button: {
      width: "20%",
      backgroundColor: 'blue',
