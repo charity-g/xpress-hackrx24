@@ -131,6 +131,10 @@ for row_index, row in dt_csv.iterrows():
         "type": row_type,
         "q": row["prompt them"]
         }
+
+    if str(row['react-native-options']) != 'nan':
+        node['react-native-options'] = row['react-native-options']
+    
     try:
         if row_type == 'Buffer':
             continue #don't add to data

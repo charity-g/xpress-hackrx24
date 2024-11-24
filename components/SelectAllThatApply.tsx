@@ -10,12 +10,20 @@ interface Props {
 
 const SelectAllThatApply: React.FC<Props> = ({ items, yesRID, noRID, onClick }) => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  const [submitButtonText, setSubmitButtonText] = useState<string>('None of the above apply');
 
   const toggleItem = (item: string) => {
-    setSelectedItems((prevSelectedItems) =>
-      prevSelectedItems.includes(item)
-        ? prevSelectedItems.filter((i) => i !== item)
-        : [...prevSelectedItems, item]
+    setSelectedItems((prevSelectedItems) =>{
+      if (prevSelectedItems.includes(item)) {
+        if (prevSelectedItems.length === 1) {
+          setSubmitButtonText("None of the above apply");
+        }
+        return prevSelectedItems.filter((i) => i !== item);
+      } else {
+        setSubmitButtonText("Submit");
+        return [...prevSelectedItems, item];
+      }
+    }
     );
   };
   const handleSubmit = () => { 
@@ -28,7 +36,10 @@ const SelectAllThatApply: React.FC<Props> = ({ items, yesRID, noRID, onClick }) 
 
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView style={styles.scrollView}
+        scrollEnabled={true}
+        nestedScrollEnabled={true}
+      >
         {items.map((item, index) => (
           <TouchableOpacity
             key={index}
@@ -42,7 +53,7 @@ const SelectAllThatApply: React.FC<Props> = ({ items, yesRID, noRID, onClick }) 
           </TouchableOpacity>
         ))}
       </ScrollView>
-      <Button title="Submit" onPress={handleSubmit}/>
+      <Button title={submitButtonText} onPress={handleSubmit}/>
     </View>
   );
 };
@@ -55,6 +66,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     marginBottom: 20,
+    flex:1,
+    height: 100,
+    zIndex: 1,
   },
   item: {
     padding: 15,

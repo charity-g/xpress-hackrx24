@@ -11,7 +11,9 @@ export interface AlgNode  {
     isLeaf: boolean,
     isStartingSymptom: boolean
     type  : string, //"normalNode" or "yesNoNode"
-    q      : string
+    q      : string,
+    map? : string,
+    "react-native-options"?: string,
     }
    
 export interface normalNode extends AlgNode {

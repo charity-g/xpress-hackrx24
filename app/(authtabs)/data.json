@@ -50,43 +50,60 @@
     "2": {
         "isLeaf": true,
         "startingSymptom": false,
-        "type": "normalNode",
+        "type": "Map",
         "q": "Please speak to the pharmacist.\n\u2022 Based on your symptoms, it\u2019s a good idea to check-in with the pharmacist ",
-        "buttons": []
+        "map": NaN
     },
     "3": {
         "isLeaf": true,
         "startingSymptom": false,
         "type": "Map",
         "q": "Please refer to a physician",
-        "map": "/walk-in-clinics"
+        "map": "https://www.edwaittimes.ca/welcome"
     },
     "4": {
         "isLeaf": true,
         "startingSymptom": false,
         "type": "Map",
         "q": "Please refer to the nearest emergency department. ",
-        "map": "/emergencies"
+        "map": "https://www.edwaittimes.ca/welcome"
     },
     "5": {
         "isLeaf": true,
         "startingSymptom": false,
-        "type": "normalNode",
+        "type": "Map",
         "q": "Thank you using XpressSelect!",
-        "buttons": []
+        "map": NaN
     },
     "6": {
         "isLeaf": true,
         "startingSymptom": false,
-        "type": "MACSReferralNode",
-        "q": "Please talk to the pharmacist if you'd like to check if they can prescribe something for you."
+        "type": "Map",
+        "q": "Please talk to the pharmacist if you'd like to check if they can prescribe something for you.",
+        "map": NaN
     },
     "7": {
         "isLeaf": true,
         "startingSymptom": false,
         "type": "Map",
         "q": "Stay hydrated and please refer to a physician.  ",
-        "map": "/walk-in-clinics"
+        "map": "https://www.edwaittimes.ca/welcome"
+    },
+    "8": {
+        "isLeaf": true,
+        "startingSymptom": false,
+        "type": "Map",
+        "q": "Please book an appointment with a physician, the pharmacist is unable to provide you with a medication given your symptoms",
+        "react-native-options": "appointment:telus",
+        "map": "https://www.telus.com/en/health/my-care/doctors"
+    },
+    "9": {
+        "isLeaf": true,
+        "startingSymptom": false,
+        "type": "Map",
+        "q": "Please book an appointment with medme",
+        "react-native-options": "appointment:medme",
+        "map": "https://www.medmehealth.com/ca"
     },
     "110": {
         "isLeaf": false,
@@ -190,7 +207,8 @@
         "isLeaf": true,
         "startingSymptom": false,
         "type": "normalNode",
-        "q": "Tap option for additional details  ",
+        "q": "Here are your options",
+        "react-native-options": "deliver",
         "buttons": [
             {
                 "text": "Pepcid AC",
@@ -203,7 +221,8 @@
         "isLeaf": true,
         "startingSymptom": false,
         "type": "normalNode",
-        "q": "Choose from the below options:  \n\nTap each option for additional details  ",
+        "q": "Here are your options",
+        "react-native-options": "deliver",
         "buttons": [
             {
                 "text": "Pepcid AC  \n",
@@ -232,6 +251,7 @@
         "startingSymptom": false,
         "type": "normalNode",
         "q": "Select the option below ",
+        "react-native-options": "deliver",
         "buttons": [
             {
                 "text": "Nexium\n",
@@ -250,8 +270,8 @@
         "startingSymptom": false,
         "type": "yesNoNode",
         "q": "What symptoms are you currently experiencing? ",
-        "yesRID": "2",
-        "noRID": "2",
+        "yesRID": "201",
+        "noRID": "8",
         "selections": [
             "Painful or burning sensation when urinating   \n",
             "Feeling a strong need to urinate right away (Urgency)  \n",
@@ -259,6 +279,77 @@
             "No unusual vaginal symptoms  \n",
             "Lower stomach discomfort or pressure  \n",
             "Slight blood in the urine  "
+        ]
+    },
+    "201": {
+        "isLeaf": false,
+        "startingSymptom": false,
+        "type": "yesNoNode",
+        "q": "What symptoms are you currently experiencing? ",
+        "yesRID": "8",
+        "noRID": "202",
+        "selections": [
+            "Fever, chills  \n",
+            "Nausea, vomiting  \n",
+            "Back pain  \n",
+            "Feeling very tired or unwell  \n",
+            "Unusual vaginal discharge or itching  \n",
+            "Pain during sexual intercourse \n",
+            "Significant blood in the urine  \n",
+            "Symptoms lasting longer than 2 weeks  "
+        ]
+    },
+    "202": {
+        "isLeaf": false,
+        "startingSymptom": false,
+        "type": "normalNode",
+        "q": "Have you had a UTI before? ",
+        "buttons": [
+            {
+                "text": "Yes, within the past month \n",
+                "rid": "8",
+                "type": "InternalRIDButton"
+            },
+            {
+                "text": "Yes, two or more times in the past six months \n",
+                "rid": "8",
+                "type": "InternalRIDButton"
+            },
+            {
+                "text": "Yes, three or more times in the past year \n",
+                "rid": "8",
+                "type": "InternalRIDButton"
+            },
+            {
+                "text": "Yes, but only once a long time ago (I\u2019m not sure when) \n",
+                "rid": "203",
+                "type": "InternalRIDButton"
+            },
+            {
+                "text": "No, I\u2019ve never had one ",
+                "rid": "203",
+                "type": "InternalRIDButton"
+            }
+        ]
+    },
+    "203": {
+        "isLeaf": false,
+        "startingSymptom": false,
+        "type": "yesNoNode",
+        "q": "Do any of these apply to you? ",
+        "yesRID": "8",
+        "noRID": "9",
+        "selections": [
+            "Pregnant  \n",
+            "Breastfeeding a baby less than 1 month old or have G6PD deficiency (e.g. allergic to fava beans) \n",
+            "Male  \n",
+            "Under 16 years old  \n",
+            "Urinary tract issues (e.g. catheter, blockage)  \n",
+            "Kidney problems  \n",
+            "Weakened immune systems  \n",
+            "Poorly controlled diabetes  \n",
+            "Spinal cord injury  \n",
+            "Previously diagnosed with interstitial cystitis (chronic bladder condition) "
         ]
     }
 }
