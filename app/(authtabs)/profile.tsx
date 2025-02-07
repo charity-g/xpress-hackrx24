@@ -10,7 +10,7 @@ export default function Profile() {
     
     <ThemedView style={styles.titleContainer}>
     <SafeAreaProvider>
-    <SafeAreaView>
+    <SafeAreaView style={{flexDirection: "column", justifyContent:"center"}}>
       
     <View style={styles.flexContainer}>
       <ThemedText type="title" >Your Profile</ThemedText>
@@ -71,11 +71,13 @@ const styles = StyleSheet.create({
    },
    flexContainer: {
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: "flex-start",
+    width: 400,
+    marginLeft: 70,
     gap: 8,
    }, 
    subHeading : {
-    textAlign:"center",
+    textAlign:"left",
     marginBottom: 20,
    },
    rowItem: {
